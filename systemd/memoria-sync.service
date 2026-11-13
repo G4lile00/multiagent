@@ -1,0 +1,8 @@
+[Unit]
+Description=Sincroniza a memoria multi-agente (git pull --rebase + commit + push)
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/bin/mem-sync.sh
+# Falha nao desativa o timer; a proxima janela tenta de novo
